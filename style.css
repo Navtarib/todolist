@@ -1,0 +1,149 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* Full-screen container styling */
+html, body {
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+  height: 100vh; /* Full viewport height */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  text-align: center;
+}
+
+/* Title styling */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Input group styling */
+.input-group {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.input-group input[type="text"] {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.input-group button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+}
+
+.input-group button:hover {
+  background-color: #218838;
+}
+
+/* Task List with Scroll */
+#taskList {
+  flex-grow: 1;  /* Allows task list to expand and fill available space */
+  max-height: calc(100vh - 250px); /* Adjust height based on other elements */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  margin-top: 1rem;
+  padding-right: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+
+/* Task styling */
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.task p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Delete button styling */
+.task button {
+  padding: 0.3rem 0.7rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #dc3545;
+  color: white;
+  cursor: pointer;
+}
+
+.task button:hover {
+  background-color: #c82333;
+}
+
+/* Clear All Tasks button */
+#clearTask {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffc107;
+  color: white;
+  cursor: pointer;
+}
+
+#clearTask:hover {
+  background-color: #e0a800;
+}
+
+/* Optional: Style scrollbar (only visible in webkit browsers like Chrome, Safari) */
+#taskList::-webkit-scrollbar {
+  width: 8px;
+}
+
+#taskList::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+
+#taskList::-webkit-scrollbar-thumb:hover {
+  background-color: #bbb;
+}
+
+/* Responsive adjustments */
+@media (max-width: 500px) {
+  .input-group {
+      flex-direction: column;
+  }
+
+  .input-group input[type="text"],
+  .input-group button {
+      width: 100%;
+      border-radius: 5px;
+      margin: 0.2rem 0;
+  }
+}
